@@ -16,7 +16,6 @@
         activate();
 
         function activate() {
-            vm.getPokemon();
         }
 
         function getPokemon() {

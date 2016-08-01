@@ -10,4 +10,8 @@
     2+2 = {{2+2}} <br />
 
     <div ng-cloak>page title: {{vm.title}}</div>
+    <button ng-click="vm.getPokemon()">Get pokemon</button>
+    <div ng-show="vm.pokemon">
+        Pokemon name: {{vm.pokemon.name}}
+    </div>
 </div>
