@@ -11,8 +11,13 @@ namespace AngularDemo.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle(Constants.AngularBundle)
-                    .IncludeDirectory("~/Scripts", "angular-*.js")
+                    .Include("~/Scripts/angular.min.js", 
+                            "~/Scripts/angular-route.min.js")
                     );
+
+            bundles.Add(new ScriptBundle(Constants.ApplicationBundle)
+                .IncludeDirectory("~/Scripts/home", "*.js", true)
+                );
         }
     }
 }

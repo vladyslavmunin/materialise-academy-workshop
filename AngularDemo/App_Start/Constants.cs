@@ -7,6 +7,7 @@ namespace AngularDemo.App_Start
 {
     public class Constants
     {
-        public const string AngularBundle = "~/scripts/wwangular";
+        public const string AngularBundle = "~/scripts/angular";
+        public const string ApplicationBundle = "~/scripts/app";
     }
 }
