@@ -116,6 +116,7 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\home\angularDemoApp.js" />
+    <Content Include="Scripts\home\controller\homeController.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
