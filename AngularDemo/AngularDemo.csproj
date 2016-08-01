@@ -117,6 +117,7 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\home\angularDemoApp.js" />
     <Content Include="Scripts\home\controller\homeController.js" />
+    <Content Include="Scripts\home\services\criminalFactory.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
