@@ -10,7 +10,7 @@ namespace AngularDemo.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/angular")
+            bundles.Add(new ScriptBundle(Constants.AngularBundle)
                     .IncludeDirectory("~/Scripts", "angular-*.js")
                     );
         }
