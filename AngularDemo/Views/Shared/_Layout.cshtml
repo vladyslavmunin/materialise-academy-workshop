@@ -29,12 +29,12 @@
         @RenderBody()
         <hr />
         <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
- 
-        @Scripts.Render(AngularDemo.App_Start.Constants.AngularBundle)
-        @Styles.Render(AngularDemo.App_Start.Constants.AngularBootstrap)
-    @Scripts.Render(AngularDemo.App_Start.Constants.TemlateBundle)
+    @Styles.Render(AngularDemo.App_Start.Constants.Bootstrap)
+    @Scripts.Render(AngularDemo.App_Start.Constants.AngularBundle)
     @Scripts.Render(AngularDemo.App_Start.Constants.ApplicationBundle)
+
 </body>
 </html>

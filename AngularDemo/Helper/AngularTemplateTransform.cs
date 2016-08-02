@@ -6,7 +6,7 @@ using System.Text;
 using System.Web;
 using System.Web.Optimization;
 
-namespace AngularDemo.Helpers
+namespace AngularDemo.Helper
 {
     public class AngularTemplateTransform : IBundleTransform
     {

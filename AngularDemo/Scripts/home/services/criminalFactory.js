@@ -10,17 +10,20 @@
     function criminalFactory($http) {
         var service = {
             getAll: getAll,
-            deleteByID: deleteByID
+            getById: getById,
+            deleteById :deleteById
         };
 
         return service;
 
         function getAll() {
-            return $http.get("/api/criminals");
+            return $http.get("/api/criminals/");
         }
-
-        function deleteByID(id) {
-            return $http.delete("/api/criminals", { params: { id: id } });
+        function getById(id) {
+            return $http.get("/api/criminals/"+id);
+        }
+        function deleteById(id) {
+            return $http.delete("/api/criminals/" + id);
         }
     }
 })();

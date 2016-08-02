@@ -2,32 +2,41 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
-    <div ng-controller="homeController as vm">
-        <form name="newCriminalForm">
-            <label>Name:</label> <input class="form-control"
-                                        ng-minlength="10"
-                                        ng-maxlength="100" name="name"
-                                        ng-model="vm.newCriminal.Name" />
-            <div ng-show="newCriminalForm.name.$error.minlength">Tye to get rid of me.</div>
-            <label>Descrition:</label> <input class="form-control" ng-model="vm.newCriminal.Description" />
-            <label>Reward:</label> <input valid-number name="reward" class="form-control"
-       ng-model="vm.newCriminal.Reward" />
-            <button style="margin:20px" class="btn-info" type="submit" ng-click="vm.addNewCriminal()">Add new criminal</button>
-        </form>
-        <br />
-
-        <label>Filter by name:</label><input type="text" ng-model="vm.filter.Name" />
-        <div ng-repeat="criminal in vm.criminals | filter: vm.filter.Name">
-            <div>Number: {{$index}}</div>
-            <span style="font-weight:bold;margin-right:20px;" ng-bind="criminal.Name"></span>
-            <button ng-click="vm.deleteCriminal(criminal.ID)">X</button>
-            <br />
-            <div ng-bind="criminal.Description"></div> <br />
-            <div ng-bind="'Reward for me is ' + criminal.Reward"></div>
-            <br />
+<div ng-controller="homeController as vm">
+     <input ng-model="myModel"/> <label>myModel value:</label>
+       <label ng-bind="myModel">
+       </label>    
+    <div><label>Filter by Name</label> <input type="text" ng-model="Filter.Name" /></div>
+    <div ng-repeat="x in vm.collectionCriminals | filter : Filter.Name" >
+        <div class="row">
+           
+             <div class="col-md-2 ">{{x.Name}}</div>
+            <div class="col-md-6 ">{{x.Description}}</div>
+            <div class="col-md-2">{{x.Reward}}</div>
+            <div class="col-md-2"><button class="btn-danger btn-lg" ng-click="vm.deleteById(x.ID)">Delete</button></div>
         </div>
 
 
     </div>
+
+    <form name="creationForm" class="col-md-6">
+
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" ng-model="vm.newCriminal.Name" required>
+
+        <label>Description</label>
+
+        <input type="text" class="form-control"  ng-model="vm.newCriminal.Description ">
+        <label>Reward</label>
+        <input type="text" class="form-control"  ng-model="vm.newCriminal.Reward" valid-number>
+
+         
+        <button ng-click="vm.create()" class="btn-success btn-lg">Create criminal</button>
+        <button ng-click="vm.update()" class="btn-warning btn-lg ">Update criminal</button>
+        <button ng-click="vm.getAll()" class="btn-primary btn-lg">Get All</button>
+    </form>
+    <div>
+      
+    </div>
+</div>

@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     'use strict';
 
     angular
@@ -6,7 +6,7 @@
         .directive('validNumber', validNumber);
 
     validNumber.$inject = ['$filter'];
-    
+
     function validNumber($filter) {
         var directive = {
             link: link,
