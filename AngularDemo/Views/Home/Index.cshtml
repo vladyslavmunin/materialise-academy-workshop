@@ -3,10 +3,6 @@
     ViewBag.Title = "Index";
 }
 
-<input ng-model="myModel" /> <label>myModel value:</label>
-<label ng-bind="myModel"></label>
-
-
 <h2>Index</h2>
     <div ng-controller="homeController as vm">
         <form name="newCriminalForm">
@@ -16,7 +12,7 @@
                                         ng-model="vm.newCriminal.Name" />
             <div ng-show="newCriminalForm.name.$error.minlength">Tye to get rid of me.</div>
             <label>Descrition:</label> <input class="form-control" ng-model="vm.newCriminal.Description" />
-            <label>Reward:</label> <input valid-number ng-required="" name="reward" class="form-control"
+            <label>Reward:</label> <input valid-number name="reward" class="form-control"
        ng-model="vm.newCriminal.Reward" />
             <button style="margin:20px" class="btn-info" type="submit" ng-click="vm.addNewCriminal()">Add new criminal</button>
         </form>
