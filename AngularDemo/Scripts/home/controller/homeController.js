@@ -10,21 +10,26 @@
     function homeController(criminalFactory) {
         /* jshint validthis:true */
         var vm = this;
-        vm.getPokemon = getPokemon; 
         vm.title = 'homeController';
+        vm.deleteCriminal = deleteCriminal;
         
         activate();
 
         function activate() {
+            getAllCriminal();
         }
 
-        function getPokemon() {
-            criminalFactory.getPokemon()
+        function deleteCriminal(id) {
+            criminalFactory.deleteByID(id)
                 .success(function (result) {
-                    vm.pokemon = result;
-                })
-                .catch(function (exception) {
-                    var ex = exception;
+
+            });
+        }
+
+        function getAllCriminal() {
+            criminalFactory.getAll()
+                .success(function (result) {
+                    vm.criminals = result;
                 });
         };
     }

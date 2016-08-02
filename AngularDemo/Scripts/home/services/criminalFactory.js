@@ -9,13 +9,18 @@
 
     function criminalFactory($http) {
         var service = {
-            getPokemon: getPokemon
+            getAll: getAll,
+            deleteByID: deleteByID
         };
 
         return service;
 
-        function getPokemon() {
-            return $http.get("https://pokeapi.co/api/v2/pokemon-form/1/");
+        function getAll() {
+            return $http.get("/api/criminals");
+        }
+
+        function deleteByID(id) {
+            return $http.delete("/api/criminals", { params: { id: id } });
         }
     }
 })();

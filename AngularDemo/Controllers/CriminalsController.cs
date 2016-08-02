@@ -14,7 +14,7 @@ namespace AngularDemo.Controllers
         static CriminalsController()
         {
             criminals = new List<Criminal>()
-    {
+            {
         new Criminal
         {
             ID = Guid.NewGuid(),
@@ -66,12 +66,13 @@ namespace AngularDemo.Controllers
         {
             return criminals.Select(i => ConvertToDto(i)).ToList();
         }
+
         [HttpGet]
         public IHttpActionResult Get(Guid id)
         {
             var criminal = criminals.FirstOrDefault((p) => p.ID == id);
             CriminalDTO dto = ConvertToDto(criminal);
-            if (criminal == null) 
+            if (criminal == null)
             {
                 return NotFound();
             }
@@ -85,8 +86,6 @@ namespace AngularDemo.Controllers
             criminals.Add(criminal);
             return Ok();
         }
-
-
 
         public IHttpActionResult Delete(Guid id)
         {
