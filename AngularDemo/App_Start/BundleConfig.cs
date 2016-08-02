@@ -17,6 +17,7 @@ namespace AngularDemo.App_Start
                             "~/Scripts/bootstrap.js")
                     );
 
+
             bundles.Add(new StyleBundle(Constants.AngularBootstrap)
                     .Include("~/Content/bootstrap-theme.css")
                     .Include("~/Content/bootstrap.css")
