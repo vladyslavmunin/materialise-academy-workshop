@@ -11,9 +11,10 @@ namespace AngularDemo.Controllers
     public class CriminalsController : ApiController
     {
         static List<Criminal> criminals;
+        public static List<Criminal> _criminals { get; set; }
         static CriminalsController()
         {
-            criminals = new List<Criminal>()
+            _criminals = new List<Criminal>()
             {
                 new Criminal
                 {
@@ -64,26 +65,27 @@ namespace AngularDemo.Controllers
         [HttpGet]
         public IEnumerable<CriminalDTO> Get()
         {
-            return criminals.Select(ConvertToDto).ToList();
+            return _criminals.Select(ConvertToDto).ToList();
         }
 
         [HttpGet]
         public IHttpActionResult Get(Guid id)
         {
-            var criminal = criminals.FirstOrDefault((p) => p.ID == id);
-            CriminalDTO dto = ConvertToDto(criminal);
+            var criminal = _criminals.FirstOrDefault((p) => p.ID == id);
+     
             if (criminal == null)
             {
                 return NotFound();
             }
-            return Ok(criminal);
+            CriminalDTO dto = ConvertToDto(criminal);
+            return Ok(dto);
         }
 
         [HttpPost]
         public IHttpActionResult Post(CriminalDTO dto)
         {
             Criminal criminal = ConvertToCriminal(dto);
-            criminals.Add(criminal);
+            _criminals.Add(criminal);
             return Ok();
         }
 
@@ -91,7 +93,7 @@ namespace AngularDemo.Controllers
         public IHttpActionResult Update(CriminalDTO dto)
         {
             
-            var criminalToUpdate = criminals.FirstOrDefault((p) => p.ID == dto.ID);
+            var criminalToUpdate = _criminals.FirstOrDefault((p) => p.ID == dto.ID);
             if (criminalToUpdate == null)
             {
                 return NotFound();
@@ -106,12 +108,12 @@ namespace AngularDemo.Controllers
         [HttpDelete]
         public IHttpActionResult Delete(Guid id)
         {
-            var criminal = criminals.FirstOrDefault((p) => p.ID == id);
+            var criminal = _criminals.FirstOrDefault((p) => p.ID == id);
             if (criminal == null)
             {
                 return NotFound();
             }
-            criminals.Remove(criminal);
+            _criminals.Remove(criminal);
             return Ok();
         }
 
