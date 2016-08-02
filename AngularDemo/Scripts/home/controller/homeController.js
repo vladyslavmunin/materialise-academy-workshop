@@ -5,9 +5,9 @@
         .module('angularDemoApp')
         .controller('homeController', homeController);
 
-    homeController.$inject = ['criminalFactory','$scope'];
+    homeController.$inject = ['criminalFactory', '$scope', '$templateCache'];
 
-    function homeController(criminalFactory,$scope) {
+    function homeController(criminalFactory, $scope, $templateCache) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'homeController';
