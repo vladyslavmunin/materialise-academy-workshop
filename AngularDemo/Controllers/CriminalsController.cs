@@ -71,11 +71,11 @@ namespace AngularDemo.Controllers
         {
             var criminal = criminals.FirstOrDefault((p) => p.ID == id);
             CriminalDTO dto = ConvertToDto(criminal);
-            if (criminal == null)
+            if (criminal == null) 
             {
                 return NotFound();
             }
-            return Ok(criminal);
+            return Ok(dto);
         }
 
         [HttpPost]
