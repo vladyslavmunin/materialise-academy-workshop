@@ -126,6 +126,7 @@
     <Content Include="Scripts\home\angularDemoApp.routes.js" />
     <Content Include="Scripts\home\angularDemoApp.js" />
     <Content Include="Scripts\home\controller\homeController.js" />
+    <Content Include="Scripts\home\directives\nameDirective.js" />
     <Content Include="Scripts\home\directives\validNumberDirective.js" />
     <Content Include="Scripts\home\services\criminalFactory.js" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />

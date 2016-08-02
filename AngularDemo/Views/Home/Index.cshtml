@@ -4,14 +4,12 @@
 }
 <h2>Index</h2>
 <div ng-controller="homeController as vm">
-     <input ng-model="myModel"/> <label>myModel value:</label>
-       <label ng-bind="myModel">
-       </label>    
+
     <div><label>Filter by Name</label> <input type="text" ng-model="Filter.Name" /></div>
-    <div ng-repeat="x in vm.collectionCriminals | filter : Filter.Name" >
+    <div ng-repeat="x in vm.collectionCriminals | filter : Filter.Name">
         <div class="row">
-           
-             <div class="col-md-2 ">{{x.Name}}</div>
+
+            <div class="col-md-2 ">{{x.Name}}</div>
             <div class="col-md-6 ">{{x.Description}}</div>
             <div class="col-md-2">{{x.Reward}}</div>
             <div class="col-md-2"><button class="btn-danger btn-lg" ng-click="vm.deleteById(x.ID)">Delete</button></div>
@@ -23,20 +21,24 @@
     <form name="creationForm" class="col-md-6">
 
         <label>Name</label>
-        <input type="text" class="form-control" name="name" ng-model="vm.newCriminal.Name" required>
+        <input type="text" class="form-control" name="name" ng-model="vm.newCriminal.Name" required name-directive>
+
+        <span ng-show="creationForm.name.$valid">Happy Birthday Vlados!</span>
+        <span ng-show="creationForm.name.$invalid">You will't pass.....</span>
+        <br />
 
         <label>Description</label>
 
-        <input type="text" class="form-control"  ng-model="vm.newCriminal.Description ">
+        <input type="text" class="form-control" ng-model="vm.newCriminal.Description ">
         <label>Reward</label>
-        <input type="text" class="form-control"  ng-model="vm.newCriminal.Reward" valid-number>
+        <input type="text" class="form-control" ng-model="vm.newCriminal.Reward" valid-number>
 
-         
+
         <button ng-click="vm.create()" class="btn-success btn-lg">Create criminal</button>
         <button ng-click="vm.update()" class="btn-warning btn-lg ">Update criminal</button>
         <button ng-click="vm.getAll()" class="btn-primary btn-lg">Get All</button>
     </form>
     <div>
-      
+
     </div>
 </div>
